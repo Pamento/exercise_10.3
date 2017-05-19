@@ -9,12 +9,11 @@ $(function(){
 	var goRight = $('#rightDirect');		// for the arrow right
 	var lookEachSlide = $('#outSlider');
 
-
 	function goMoveSlider() {
 		interval = setInterval(function(){
 
 			carouselList.animate({'margin-left': '-=400px'}, 700, moveSlide);
-		},3000);
+		},1500);
 
 		function moveSlide(){
 			slideLoop++;
@@ -32,13 +31,32 @@ $(function(){
 	lookEachSlide.on('mouseenter', stopMoveSlider).on('mouseleave', goMoveSlider);
 	goMoveSlider();
 
-
 	goLeft.click(function() {
-		carouselList.animate({'margin-left': '-=400px'}, 700);
+		carouselList.animate({'margin-left': '-=400px'}, 700, function(){
+			slideLoop++;
+			if (slideLoop === slides.length) {
+				slideLoop = 1;
+				carouselList.css('margin-left', 0);
+			}
+		});
 	});
 
 	goRight.click(function() {
-		carouselList.animate({'margin-left': '+=400px'}, 700);
+		carouselList.animate({'margin-left': '+=400px'}, 700, function(){
+			slideLoop--;
+			if (slideLoop === 1) {
+				slideLoop = 6;
+				carouselList.css('margin-left', '-2000px');
+			}
+		});
 	});
 
+
 });
+
+
+
+
+
+
+
