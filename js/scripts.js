@@ -13,7 +13,7 @@ $(function(){
 		interval = setInterval(function(){
 
 			carouselList.animate({'margin-left': '-=400px'}, 700, moveSlide);
-		},1500);
+		},3000);
 
 		function moveSlide(){
 			slideLoop++;
