@@ -42,12 +42,12 @@ $(function(){
 	});
 
 	goRight.click(function() {
+		if(slideLoop == 1) {
+			slideLoop = 6;
+			carouselList.css('margin-left', '-2000px');
+		}
 		carouselList.animate({'margin-left': '+=400px'}, 700, function(){
 			slideLoop--;
-			if (slideLoop === 1) {
-				slideLoop = 6;
-				carouselList.css('margin-left', '-2000px');
-			}
 		});
 	});
 
