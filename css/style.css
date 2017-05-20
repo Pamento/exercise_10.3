@@ -49,13 +49,18 @@ li {
 	left: 20%;
 }
 ul {
-	width: 2500px;
+	width: 2800px;
 	list-style: none;
 	margin: 0;
 	padding: 0;
+	margin-left: 0;
+	margin-right: 0;
 }
 ul li {
-	float: left;
+	display: inline-block;
+	/*
+	float: right;
+	*/
 	list-style: none;
 }
 .directionCarousel {
