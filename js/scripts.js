@@ -40,13 +40,8 @@ $("#rightDirect").click(function(event) {
 	var carouselList = $("#carousel ul");
 	var lastItem = carouselList.find("li:last");
 	var firstItem = carouselList.find("li:first");
-	firstItem.before(lastItem);
 
 	carouselList.css({marginLeft:-400});
+	firstItem.before(lastItem);
 	carouselList.animate({"marginLeft": 0}, 700);
 });
-
-
-
-
-
