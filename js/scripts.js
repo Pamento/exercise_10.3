@@ -22,6 +22,7 @@ $(function(){
 	goMoveSlider();
 });
 
+// buttons controls slides
 
 $("#leftDirect").click(function(event) {
 	event.preventDefault();
@@ -41,6 +42,11 @@ $("#rightDirect").click(function(event) {
 	var firstItem = carouselList.find("li:first");
 	firstItem.before(lastItem);
 
-	carouselList.animate({"marginRight": 400}, 700);
-	carouselList.css({marginLeft:0});
+	carouselList.css({marginLeft:-400});
+	carouselList.animate({"marginLeft": 0}, 700);
 });
+
+
+
+
+
